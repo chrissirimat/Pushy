@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.IOException;
 
 public class PushyInit {
     public static void main(String[] args) {
@@ -18,5 +19,10 @@ public class PushyInit {
             return;
         }
 
+        File index = new File(pushyDir, "index");
+            if (!index.mkdir()){
+                System.err.println("cannot create 'index' in 'pushy'");
+            }
+        
     }
 }
